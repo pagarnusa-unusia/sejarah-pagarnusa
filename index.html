@@ -177,6 +177,81 @@ header h1 {
       letter-spacing: 0.5px;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
+/* ===== Kirim Masukan Section ===== */
+.feedback-section {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  padding: 30px 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  text-align: center;
+  animation: fadeUp 0.8s ease;
+}
+
+.feedback-section h2 {
+  color: #00796b;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.feedback-section p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  border-color: #009688;
+  box-shadow: 0 0 5px rgba(0, 150, 136, 0.4);
+}
+
+.feedback-form button {
+  background: linear-gradient(90deg, #009688, #00796b);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.feedback-form button:hover {
+  background: #00695c;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .feedback-section {
+    padding: 20px 15px;
+  }
+  .feedback-form input,
+  .feedback-form textarea {
+    max-width: 100%;
+  }
+}
+
 
     /* ========= ANIMATIONS ========= */
     @keyframes fadeUp {
@@ -286,6 +361,34 @@ header h1 {
       </ol>
     </article>
   </main>
+<!-- ===== KIRIM MASUKAN ===== -->
+<section class="feedback-section">
+  <h2>Kirim Masukan</h2>
+  <p>Kami sangat menghargai pertanyaan dan saran Anda.</p>
+  <form class="feedback-form" onsubmit="return sendToWhatsApp()">
+    <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+    <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pertanyaan Anda di sini..." required></textarea>
+    <button type="submit">Kirim ke WhatsApp</button>
+  </form>
+</section>
+
+<script>
+  function sendToWhatsApp() {
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+    const nomor = "6285715232441"; // gunakan format internasional tanpa 0
+
+    if (nama === "" || pesan === "") {
+      alert("Harap isi nama dan pertanyaan terlebih dahulu.");
+      return false;
+    }
+
+    const template = `Assalamualaikum wr.wb%0APerkenalkan saya ${nama},%0AIngin mengajukan pertanyaan berikut:%0A${pesan}`;
+    const url = `https://wa.me/${nomor}?text=${template}`;
+    window.open(url, "_blank");
+    return false; // mencegah reload halaman
+  }
+</script>
 
   <footer>
     &copy; 2025 PAGARNUSA UNUSIA. All rights reserved.
