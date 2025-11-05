@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAGARNUSA UNUSIA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* ========= GLOBAL RESET ========= */
     * {
@@ -11,114 +12,98 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f6f9f8;
+      background: linear-gradient(180deg, #f0fdfa, #f6f9f8);
       color: #333;
-      line-height: 1.7;
       overflow-x: hidden;
     }
 
-/* ========= HEADER ========= */
-header {
-  background: linear-gradient(90deg, #009688, #00796b);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  text-align: center;
-  padding: 16px 20px;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  transition: all 0.3s ease;
-}
+    /* ========= HEADER ========= */
+    header {
+      background: linear-gradient(90deg, #009688, #00796b);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      padding: 18px 20px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      animation: slideDown 1s ease;
+      backdrop-filter: blur(8px);
+    }
 
-header img {
-  width: 60px;
-  height: auto;
-  border-radius: 50%;
-  padding: 4px;
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
+    header img {
+      width: 65px;
+      height: auto;
+      border-radius: 50%;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+    }
 
-header img:hover {
-  transform: scale(1.05);
-}
+    header img:hover {
+      transform: rotate(10deg) scale(1.1);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+    }
 
-header h1 {
-  font-size: 1.7em;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin: 0;
-  line-height: 1.2em;
-}
-
-/* ====== Responsif ====== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 6px;
-    padding: 14px 10px;
-  }
-
-  header img {
-    width: 70px;
-  }
-
-  header h1 {
-    font-size: 1.3em;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.1em;
-  }
-}
+    header h1 {
+      font-size: 1.8em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin: 0;
+      line-height: 1.3em;
+      animation: fadeIn 1.2s ease;
+    }
 
     /* ========= MAIN CONTAINER ========= */
     main {
       max-width: 960px;
-      background: #fff;
-      margin: 20px auto;
-      padding: 25px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      animation: fadeUp 0.8s ease;
+      background: #ffffff;
+      margin: 25px auto;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      animation: fadeUp 1s ease;
     }
 
     article h2 {
       color: #00796b;
-      margin-top: 25px;
+      margin-top: 28px;
       border-left: 5px solid #009688;
       padding-left: 12px;
-      font-size: 1.3em;
+      font-size: 1.35em;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
+      animation: fadeUp 1s ease;
     }
 
     article h2:hover {
       color: #004d40;
+      transform: translateX(5px);
     }
 
     article p, article li {
       margin-bottom: 10px;
       text-align: justify;
       color: #333;
-      font-size: 0.96em;
+      font-size: 0.97em;
+      animation: fadeUp 0.8s ease;
     }
 
     ul, ol {
-      margin-left: 20px;
+      margin-left: 22px;
       margin-top: 10px;
     }
 
@@ -126,14 +111,17 @@ header h1 {
     img.center {
       display: block;
       margin: 15px auto;
-      border-radius: 8px;
+      border-radius: 10px;
       max-width: 100%;
       height: auto;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
+      animation: zoomIn 1s ease;
     }
+
     img.center:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
     }
 
     /* ========= TABLE ========= */
@@ -143,27 +131,106 @@ header h1 {
       margin: 20px 0;
       text-align: center;
       font-size: 0.95em;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
       animation: fadeIn 1s ease;
     }
+
     th, td {
       border: 1px solid #ddd;
       padding: 10px;
     }
+
     thead {
-      background: #e0f2f1;
+      background: linear-gradient(90deg, #e0f2f1, #b2dfdb);
       color: #004d40;
       font-weight: 600;
     }
-    td img {
-      width: 80px;
-      border-radius: 6px;
+
+    tbody tr {
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
+
     tbody tr:hover {
       background-color: #f1fdfb;
-      transition: 0.3s;
+      transform: scale(1.01);
+    }
+
+    td img {
+      width: 80px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    td img:hover {
+      transform: scale(1.1);
+    }
+
+    /* ========= FEEDBACK SECTION ========= */
+    .feedback-section {
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      padding: 35px 20px;
+      margin: 40px auto;
+      max-width: 850px;
+      text-align: center;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .feedback-section h2 {
+      color: #00796b;
+      margin-bottom: 10px;
+      font-size: 1.45em;
+    }
+
+    .feedback-section p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      animation: fadeUp 1.2s ease;
+    }
+
+    .feedback-form input,
+    .feedback-form textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 1em;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feedback-form input:focus,
+    .feedback-form textarea:focus {
+      border-color: #009688;
+      box-shadow: 0 0 8px rgba(0, 150, 136, 0.4);
+    }
+
+    .feedback-form button {
+      background: linear-gradient(90deg, #009688, #00796b);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .feedback-form button:hover {
+      background: #00695c;
+      transform: translateY(-3px);
     }
 
     /* ========= FOOTER ========= */
@@ -171,106 +238,139 @@ header h1 {
       background: linear-gradient(90deg, #00796b, #009688);
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      margin-top: 40px;
+      padding: 18px 10px;
+      margin-top: 50px;
       font-size: 0.9em;
       letter-spacing: 0.5px;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease;
     }
-/* ===== Kirim Masukan Section ===== */
-.feedback-section {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-  padding: 30px 20px;
-  margin: 30px auto;
-  max-width: 800px;
-  text-align: center;
-  animation: fadeUp 0.8s ease;
-}
 
-.feedback-section h2 {
-  color: #00796b;
-  margin-bottom: 10px;
-  font-size: 1.4em;
-}
+    /* Logout button (visible setelah login) */
+    #logoutBtn {
+      position: fixed;
+      right: 16px;
+      bottom: 90px;
+      z-index: 1101;
+      background: linear-gradient(90deg, #ff7043, #f4511e);
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      cursor: pointer;
+      display: none;
+      font-weight: 600;
+    }
 
-.feedback-section p {
-  color: #555;
-  margin-bottom: 20px;
-}
+    /* Login Overlay */
+    .login-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 18, 16, 0.75);
+      z-index: 1100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
 
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-}
+    .login-card {
+      background: linear-gradient(180deg,#ffffff,#f7fffd);
+      width: 100%;
+      max-width: 420px;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+      text-align: center;
+    }
 
-.feedback-form input,
-.feedback-form textarea {
-  width: 100%;
-  max-width: 600px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+    .login-card h3 {
+      margin-bottom: 8px;
+      color: #004d40;
+      font-size: 1.25rem;
+    }
+    .login-card p {
+      margin-bottom: 14px;
+      color: #326a63;
+      font-size: 0.95rem;
+    }
 
-.feedback-form input:focus,
-.feedback-form textarea:focus {
-  border-color: #009688;
-  box-shadow: 0 0 5px rgba(0, 150, 136, 0.4);
-}
+    .login-card input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #cfd8d5;
+      margin-bottom: 12px;
+      outline: none;
+      box-sizing: border-box;
+    }
 
-.feedback-form button {
-  background: linear-gradient(90deg, #009688, #00796b);
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+    .login-card input:focus {
+      border-color: #009688;
+      box-shadow: 0 6px 18px rgba(0,150,136,0.12);
+    }
 
-.feedback-form button:hover {
-  background: #00695c;
-  transform: translateY(-2px);
-}
+    .login-card button {
+      background: linear-gradient(90deg, #009688, #00796b);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
 
-@media (max-width: 600px) {
-  .feedback-section {
-    padding: 20px 15px;
-  }
-  .feedback-form input,
-  .feedback-form textarea {
-    max-width: 100%;
-  }
-}
+    .login-card .hint {
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: #5a7d77;
+    }
 
+    /* Hidden while locked */
+    .locked {
+      filter: blur(3px);
+      pointer-events: none;
+      user-select: none;
+    }
 
     /* ========= ANIMATIONS ========= */
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     /* ========= RESPONSIVE ========= */
     @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 8px;
+      }
+      header img {
+        width: 70px;
+      }
       header h1 {
         font-size: 1.4em;
       }
       main {
-        margin: 10px;
-        padding: 18px;
+        margin: 12px;
+        padding: 20px;
       }
       article h2 {
         font-size: 1.1em;
@@ -279,19 +379,37 @@ header h1 {
         font-size: 0.85em;
       }
       td img {
-        width: 70px;
+        width: 65px;
+      }
+      .feedback-form input, .feedback-form textarea {
+        max-width: 100%;
       }
     }
   </style>
 </head>
-<body>
 
-  <header>
+<body>
+  <!-- LOGIN OVERLAY (muncul saat belum login) -->
+  <div id="loginOverlay" class="login-overlay" aria-hidden="false">
+    <div class="login-card" role="dialog" aria-labelledby="loginTitle">
+      <h3 id="loginTitle">Akses Terbatas</h3>
+      <p>Masukkan <strong>kode akses</strong> untuk melihat halaman.</p>
+      <input id="accessCodeInput" type="password" placeholder="Masukkan kode akses" aria-label="Kode akses">
+      <div style="display:flex;gap:8px;justify-content:center;">
+        <button id="loginBtn" onclick="tryAccess()">Masuk</button>
+        <button onclick="showHelper()" style="background:#e0f2f1;color:#004d40;border:none;padding:10px 12px;border-radius:10px;cursor:pointer">Bantuan</button>
+      </div>
+      <div class="hint" id="loginHint">Hubungi admin jika Anda tidak memiliki kode.</div>
+    </div>
+  </div>
+
+  <header id="pageHeader">
     <img src="logopn.png" alt="Logo PAGARNUSA">
     <h1>PAGARNUSA UNUSIA</h1>
   </header>
 
-  <main>
+  <!-- KONTEN UTAMA (tetap persis seperti yang Anda kirim) -->
+  <main id="mainContent">
     <article>
       <h2>Sejarah</h2>
       <p>Pencak Silat Nahdlatul Ulama Pagar Nusa: Pilar Pencak Silat di Lingkungan NU</p>
@@ -361,38 +479,142 @@ header h1 {
       </ol>
     </article>
   </main>
-<!-- ===== KIRIM MASUKAN ===== -->
-<section class="feedback-section">
-  <h2>Kirim Masukan</h2>
-  <p>Kami sangat menghargai pertanyaan dan saran Anda.</p>
-  <form class="feedback-form" onsubmit="return sendToWhatsApp()">
-    <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
-    <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pertanyaan Anda di sini..." required></textarea>
-    <button type="submit">Kirim ke WhatsApp</button>
-  </form>
-</section>
 
-<script>
-  function sendToWhatsApp() {
-    const nama = document.getElementById("nama").value.trim();
-    const pesan = document.getElementById("pesan").value.trim();
-    const nomor = "6285715232441"; // gunakan format internasional tanpa 0
-
-    if (nama === "" || pesan === "") {
-      alert("Harap isi nama dan pertanyaan terlebih dahulu.");
-      return false;
-    }
-
-    const template = `Assalamualaikum wr.wb%0APerkenalkan saya ${nama},%0AIngin mengajukan pertanyaan berikut:%0A${pesan}`;
-    const url = `https://wa.me/${nomor}?text=${template}`;
-    window.open(url, "_blank");
-    return false; // mencegah reload halaman
-  }
-</script>
+  <section class="feedback-section" id="feedbackSection">
+    <h2>Kirim Masukan</h2>
+    <p>Kami sangat menghargai pertanyaan dan saran Anda.</p>
+    <form class="feedback-form" onsubmit="return sendToWhatsApp()">
+      <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+      <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pertanyaan Anda di sini..." required></textarea>
+      <button type="submit">Kirim ke WhatsApp</button>
+    </form>
+  </section>
 
   <footer>
     &copy; 2025 PAGARNUSA UNUSIA. All rights reserved.
   </footer>
 
+  <button id="logoutBtn" title="Keluar (Logout)">Logout</button>
+
+  <script>
+    /*************************************************************************
+     * Konfigurasi:
+     * - validCodes: daftar kode akses yang diizinkan. Ubah sesuai kebutuhan.
+     *   (Client-side only; jangan gunakan ini untuk data sensitif!)
+     *
+     * Catatan keamanan:
+     * - Sistem ini hanya cocok untuk pembatasan ringan (mis. hanya untuk
+     *   menampilkan konten non-sensitif). Karena semua ada di client-side,
+     *   pengguna berpengalaman tetap dapat melewati pembatasan.
+     *************************************************************************/
+    const validCodes = [
+      "PAGARNUSA25",
+      "PAGARNUSA24",
+      "PAGARNUSA23" // tambahkan/matikan sesuai kebutuhan
+    ];
+
+    const overlay = document.getElementById('loginOverlay');
+    const mainContent = document.getElementById('mainContent');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const accessKey = 'pagar_nusa_access_granted';
+
+    // Cek sessionStorage jika sudah masuk
+    function initAccess() {
+      const granted = sessionStorage.getItem(accessKey);
+      if (granted === "true") {
+        unlockPage(); // biarkan akses
+      } else {
+        lockPage(); // tampilkan overlay
+      }
+    }
+
+    function lockPage() {
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden', 'false');
+      mainContent.classList.add('locked');
+      logoutBtn.style.display = 'none';
+      // scroll ke atas agar overlay terlihat
+      window.scrollTo(0,0);
+    }
+
+    function unlockPage() {
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+      mainContent.classList.remove('locked');
+      logoutBtn.style.display = 'block';
+    }
+
+    function tryAccess() {
+      const val = document.getElementById('accessCodeInput').value.trim();
+      if (!val) {
+        alert('Masukkan kode akses.');
+        return;
+      }
+      // Periksa validitas
+      const ok = validCodes.some(code => code === val);
+      if (ok) {
+        sessionStorage.setItem(accessKey, "true");
+        unlockPage();
+        // membersihkan field input
+        document.getElementById('accessCodeInput').value = "";
+      } else {
+        // memberikan opsi percobaan dan petunjuk
+        alert('Kode tidak valid. Hubungi admin jika perlu bantuan.');
+      }
+    }
+
+    // Tombol logout (menghapus akses)
+    logoutBtn.addEventListener('click', () => {
+      const confirmLogout = confirm('Anda yakin ingin keluar (logout)?');
+      if (!confirmLogout) return;
+      sessionStorage.removeItem(accessKey);
+      lockPage();
+    });
+
+    // Optional: tunjukkan helper (bisa berisi instruksi atau nomor kontak)
+    function showHelper() {
+      const helper = "Jika Anda tidak memiliki kode akses, silakan hubungi admin: WhatsApp 0857-1523-2441 (atau sesuaikan nomor di script).";
+      alert(helper);
+    }
+
+    // Fitur kirim WhatsApp tetap berfungsi
+    function sendToWhatsApp() {
+      const nama = document.getElementById("nama").value.trim();
+      const pesan = document.getElementById("pesan").value.trim();
+      const nomor = "6285715232441"; // format internasional tanpa 0
+
+      if (nama === "" || pesan === "") {
+        alert("Harap isi nama dan pertanyaan terlebih dahulu.");
+        return false;
+      }
+
+      const template = `Assalamualaikum wr.wb%0APerkenalkan saya ${encodeURIComponent(nama)},%0AIngin mengajukan pertanyaan berikut:%0A${encodeURIComponent(pesan)}`;
+      const url = `https://wa.me/${nomor}?text=${template}`;
+      window.open(url, "_blank");
+      return false;
+    }
+
+    // Efek muncul saat scroll (tetap berfungsi)
+    const elements = document.querySelectorAll("article h2, article p, article li, img.center, table, .feedback-section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = "fadeUp 1s ease forwards";
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elements.forEach(el => observer.observe(el));
+
+    // Inisialisasi akses saat halaman dimuat
+    initAccess();
+
+    // Accessibility: Enter untuk input login
+    document.getElementById('accessCodeInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        tryAccess();
+      }
+    });
+  </script>
 </body>
 </html>
